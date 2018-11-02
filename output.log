@@ -1,0 +1,9 @@
+nohup: ignoring input
+Example app listening on port 3000!
+In getjoke route
+/var/www/html/creative4/node-rest-shop/server.js:17
+        if (err) throw err;
+                 ^
+
+Error: ENOENT: no such file or directory, open '/var/www/html/creative4/node-rest-shop/jokes.dat.txt'
+    at Error (native)

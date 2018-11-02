@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>Date Questions</title>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<style type="text/css">
+ 
+  
+  
+</style>
+</head>
+<body>
+<form>
+  <button type="button" id="QUESTIONS">Get your Question</button>
+<button type="button" id="RESET">reset</button>
+
+ 
+<br>
+<span id="xx"></span>
+</form>
+ 
+<script>
+
+$( "#QUESTIONS" ).click(function() {
+ 
+  var rand = Math.floor(Math.random() * 25);
+  var url = "getquestion?q="+rand.toString();
+  $.getJSON(url,function(data) {
+    var toDisplay = data[0].fact;
+    
+    var everything = "<br><br><p>"
+    everything += data[0].fact;
+    everything+="</p>";
+    $("#xx").html(everything);
+    
+    displaytext();
+    
+    
+    
+
+  });
+});
+
+    $( "#RESET" ).click(function() {
+    $("#xx").html("");
+    document.body.style.cssText = 'background-color:grey;';
+    });
+    
+   function displaytext()
+   {
+     document.write (jsonresult)
+   }
+    
+    
+    </script>
+   <script src="index.js"> </script>
+   
+   
+
+</body>
+</html>
